@@ -49,7 +49,7 @@ export const getCurrentUser = async () => {
  * 获取用户列表
  * @param username
  */
-export const searchUsers = async (username: never) => {
+export const searchUsers = async (username: any) => {
   return await myAxios.request({
     url: "/api/user/search",
     method: "GET",

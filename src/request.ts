@@ -1,7 +1,11 @@
 import axios from "axios";
 
 export const myAxios = axios.create({
-  baseURL: "http://localhost:8080",
+  // 区分开发环境和生产环境
+  baseURL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:8080"
+      : "http://production:8080",
   timeout: 10000,
   withCredentials: true,
 });
